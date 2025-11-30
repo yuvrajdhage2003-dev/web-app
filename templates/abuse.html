@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abuse Detection</title>
+</head>
+<body>
+
+<h2>Abuse / Hate Speech Detection</h2>
+
+<form action="/perform_abuse" method="post">
+    <textarea name="abuse_text" rows="5" cols="50">{{ input_text }}</textarea><br>
+    <input type="submit" value="Check Abuse">
+</form>
+
+{% if label %}
+<h3>Result:</h3>
+<p><b>Classification:</b> {{ label }}</p>
+{% endif %}
+
+</body>
+</html>

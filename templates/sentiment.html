@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+
+<h2>Sentiment Analysis</h2>
+
+<form action="/perform_sentiment" method="post">
+    <textarea name="sent_text" rows="5" cols="50">{{ input_text }}</textarea><br>
+    <input type="submit" value="Analyze Sentiment">
+</form>
+
+{% if label %}
+<h3>Result:</h3>
+<p><b>Sentiment:</b> {{ label }}</p>
+<p><b>Score:</b> {{ score }}</p>
+{% endif %}
+
+</body>
+</html>

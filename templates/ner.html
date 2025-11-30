@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NER</title>
+</head>
+<body>
+
+    <form action="/perform_ner" method="post">
+        <label>Type your text here</label><br>
+        <textarea name="ner_text" rows="6" cols="50">{{ input_text }}</textarea><br>
+        <input type="submit" value="Perform NER">
+    </form>
+
+    {% if entities %}
+    <h3>Named Entities Extracted:</h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Entity</th>
+            <th>Label</th>
+        </tr>
+
+        {% for item in entities %}
+        <tr>
+            <td>{{ item.text }}</td>
+            <td>{{ item.label }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+</body>
+</html>
